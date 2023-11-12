@@ -6,6 +6,7 @@ const { Category, Product } = require('../../models');
 router.get('/', async (req, res) => {
     // find all categories
   // be sure to include its associated Products
+  
   try {
     const categories = await Category.findAll({
       include: [{ model: Product }],
@@ -27,12 +28,24 @@ router.get('/', async (req, res) => {
 // it responds with a status code of 500 (internal server error) and sends a JSON response with the message 'Nothing Found'.
 //This code essentially attempts to fetch all categories and their associated products from the database using Sequelize and 
 // handles both successful and error scenarios when fetching this data.
-router.get('/:id', (req, res) => {
+router.get('/:id', async (req, res) => {
   // find one category by its `id` value
   // be sure to include its associated Products
+  try {
+    const categoryData = await Category.findByPk(req.params.id, {
+      include: [Product]
+    });
+
+    if (categoryData) {
+      res.status(404).json({ message: 'No category found with this id!' });
+      return;
+    }
 });
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
+  try {
+    
+  }
   // create a new category
 });
 
