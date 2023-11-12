@@ -4,16 +4,16 @@ const { Category, Product } = require('../../models');
 // The `/api/categories` endpoint
 
 router.get('/', async (req, res) => {
-    // find all categories
+  // find all categories
   // be sure to include its associated Products
-  
+
   try {
     const categories = await Category.findAll({
       include: [{ model: Product }],
     });
     res.status(200).json(categories);
   } catch (err) {
-    res.status(500).json({message: 'Nothing Found' });
+    res.status(500).json({ message: 'Nothing Found' });
   }
 });
 //This code usses Sequelize, which is an ORM (Object-Relational Mapping) for Node.js that works with databases like MySQL
@@ -40,11 +40,15 @@ router.get('/:id', async (req, res) => {
       res.status(404).json({ message: 'No category found with this id!' });
       return;
     }
+    res.status(200).json(categoryData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 router.post('/', async (req, res) => {
   try {
-    
+
   }
   // create a new category
 });
