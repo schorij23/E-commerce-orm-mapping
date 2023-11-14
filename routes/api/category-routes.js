@@ -4,61 +4,81 @@ const { Category, Product } = require('../../models');
 // The `/api/categories` endpoint
 
 router.get('/', async (req, res) => {
-  // find all categories
+    // find all categories
   // be sure to include its associated Products
-
+  
   try {
     const categories = await Category.findAll({
       include: [{ model: Product }],
     });
     res.status(200).json(categories);
   } catch (err) {
-    res.status(500).json({ message: 'Nothing Found' });
+    res.status(500).json({error: err.message });
   }
 });
-//This code usses Sequelize, which is an ORM (Object-Relational Mapping) for Node.js that works with databases like MySQL
-//Category.findAll(): This is a Sequelize method to find all entries in the Category model/table in the associated database. It fetchings
-//all categories.include: [{ model: Product }]: This line specifies an association or a join, indicating that along with the categories 
-// it should also retrieve associated products. This assumes there's a relationship defined between the Category and Product models 
-// in your Sequelize setup. try {...} catch (err) {...}: This is a standard error handling structure in JavaScript. 
-// It attempts to execute the code within the try block, and if any errors occur during this execution, it will be caught and handled 
-// in the catch block. res.status(200).json(categories);: If the Category.findAll() and product inclusion operation is successful, 
-// it will respond with a status code of 200 (indicating success) and return the found categories along with their 
-// associated products in JSON format. res.status(500).json({message: 'Nothing Found'}); In case an error occurs during the operation, 
-// it responds with a status code of 500 (internal server error) and sends a JSON response with the message 'Nothing Found'.
-//This code essentially attempts to fetch all categories and their associated products from the database using Sequelize and 
-// handles both successful and error scenarios when fetching this data.
+
 router.get('/:id', async (req, res) => {
   // find one category by its `id` value
   // be sure to include its associated Products
   try {
     const categoryData = await Category.findByPk(req.params.id, {
-      include: [Product]
+      include: [{model: Product}]
     });
 
-    if (categoryData) {
-      res.status(404).json({ message: 'No category found with this id!' });
+    if (!categoryData) {
+      res.status(404).json({message: 'id not found'});
       return;
     }
-    res.status(200).json(categoryData);
-  } catch (err) {
-    res.status(500).json(err);
+      res.status(200).json(categoryData);
+    } catch (err) {
+    res.status(500).json({error: err.message});
   }
 });
 
 router.post('/', async (req, res) => {
+   // create a new category
   try {
+    const categoryData = await Category.create(req.body);
+    res.status(200).json(categoryData);
 
+  } catch (err) {
+    res.status(500).json({error: err.message});
   }
-  // create a new category
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', async (req, res) => {
   // update a category by its `id` value
+  try {
+    const updatedRows = await Category.update(req.body, {
+      where: { id: req.params.id }
+    });
+
+    if (updatedRows > 0) {
+      const updatedCategory = await Category.findByPk(req.params.id);
+      res.status(200).json(updatedCategory);
+    } else {
+      res.status(404).json({ message: 'Category not found with this id!' });
+    }
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', async (req, res) => {
   // delete a category by its `id` value
+  try {
+    const deleteCategory = await Category.destroy( {
+      where: { id: req.params.id, 
+      },
+    });
+    if(!deleteCategory) {
+      res.status(404).json({ message: 'Category not found with this id!'});
+      return;
+    } 
+      res.status(200).json(deleteCategory); 
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;

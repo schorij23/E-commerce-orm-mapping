@@ -11,5 +11,5 @@ const sequelize = process.env.JAWSDB_URL
         decimalNumbers: true,
       },
     });
-// should there be a PORT?? there is a port in server.js
+//Need a port
 module.exports = sequelize;
