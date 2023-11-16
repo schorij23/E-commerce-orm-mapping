@@ -4,10 +4,8 @@ const { Category, Product } = require('../../models');
 // The `/api/categories` endpoint
 
 router.get('/', async (req, res) => {
-    // find all categories
-  // be sure to include its associated Products
-  
-  try {
+    // Find all categories and include its associated Products
+    try {
     const categories = await Category.findAll({
       include: [{ model: Product }],
     });
@@ -16,15 +14,14 @@ router.get('/', async (req, res) => {
     res.status(500).json({error: err.message });
   }
 });
-
+// find a single category by ID
 router.get('/:id', async (req, res) => {
-  // find one category by its `id` value
-  // be sure to include its associated Products
+  // Find Category by Primary Key ID and include its associated Products
   try {
     const categoryData = await Category.findByPk(req.params.id, {
       include: [{model: Product}]
     });
-
+    // Check if the category with the given ID was not found
     if (!categoryData) {
       res.status(404).json({message: 'id not found'});
       return;
@@ -45,15 +42,16 @@ router.post('/', async (req, res) => {
     res.status(500).json({error: err.message});
   }
 });
-
+// Update a category by ID
 router.put('/:id', async (req, res) => {
-  // update a category by its `id` value
   try {
+    // Update the category with the provided data
     const updatedRows = await Category.update(req.body, {
       where: { id: req.params.id }
     });
-
+    // Check if the category was successfully updated
     if (updatedRows > 0) {
+      // Retrieve the updated category by its ID
       const updatedCategory = await Category.findByPk(req.params.id);
       res.status(200).json(updatedCategory);
     } else {
@@ -65,12 +63,13 @@ router.put('/:id', async (req, res) => {
 });
 
 router.delete('/:id', async (req, res) => {
-  // delete a category by its `id` value
+  // Delete a category by ID
   try {
     const deleteCategory = await Category.destroy( {
       where: { id: req.params.id, 
       },
     });
+    // Check if the category with the given ID was not found
     if(!deleteCategory) {
       res.status(404).json({ message: 'Category not found with this id!'});
       return;

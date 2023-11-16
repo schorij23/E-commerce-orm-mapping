@@ -4,8 +4,7 @@ const { Tag, Product, ProductTag, Category } = require('../../models');
 // The `/api/tags` endpoint
 
 router.get('/', async (req, res) => {
-    // find all tags
-  // be sure to include its associated Product data
+    // find all tags and include its associated Product data
   try {
     const tags = await Tag.findAll({
       include: [{ model: Product }]
@@ -16,10 +15,9 @@ router.get('/', async (req, res) => {
   }
 });
 
-
+// find a Tag category by ID
 router.get('/:id', async (req, res) => {
-  // find a single tag by its `id`
-  // be sure to include its associated Product data
+  // Find Tag by Primary Key ID and include its associated Products
   try {
     const tagData = await Tag.findByPk(req.params.id, {
       include: [{ model: Product }],
@@ -43,15 +41,16 @@ router.post('/', async (req, res) => {
     res.status(404).json(err);
   }
 });
-
+// update a tag's name by ID value
 router.put('/:id', async (req, res) => {
-  // update a tag's name by its `id` value
   try {
+    // Update the tag with the provided data
     const updatedRows = await Tag.update(req.body, {
       where: { id: req.params.id }
     });
-
+    // Check if any tags were successfully updated
     if (updatedRows > 0) {
+      // Retrieve the updated tag by its ID
       const updatedTag = await Tag.findByPk(req.params.id);
       res.status(200).json(updatedTag);
     } else {
@@ -63,11 +62,12 @@ router.put('/:id', async (req, res) => {
 });
 
 router.delete('/:id', async (req, res) => {
-  // delete on tag by its `id` value
+  // delete on tag by ID
   try {
     const deleteTag = await Tag.destroy( {
       where: { id: req.params.id,},
     });
+    // Check if the tag with the given ID was not found
     if(!deleteTag){
       res.status(404).json({ message: 'No Tags found with this id!'});
       return;
