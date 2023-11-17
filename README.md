@@ -40,10 +40,10 @@ For more details, see [License Details](https://choosealicense.com/licenses/mit/
   - Email address schorij23@gmail.com
 
 ## Walkthrough
-https://github.com/schorij23/E-commerce-orm-mapping/assets/5600528/5d08ee85-902f-4d51-8ea8-9fa1663048a1
+
+VS CODE Schema, Seeds and Start Server
+https://github.com/schorij23/E-commerce-orm-mapping/assets/5600528/c88f569e-e668-4dc7-a59a-524c058381eb
 
 
-
-
+Insomina Endpoint Testing
 https://github.com/schorij23/E-commerce-orm-mapping/assets/5600528/0830568a-d936-469b-bec8-cc70e2f490b0
-
