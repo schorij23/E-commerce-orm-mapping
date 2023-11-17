@@ -70,11 +70,8 @@ For more details, see [License Details](https://choosealicense.com/licenses/mit/
 https://github.com/schorij23/E-commerce-orm-mapping/assets/5600528/73e0de75-5911-4f0d-921a-9c29cba515b2
 
 
+https://github.com/schorij23/E-commerce-orm-mapping/assets/5600528/0830568a-d936-469b-bec8-cc70e2f490b0
+
+
+
 ## Screenshots
-
-
-
-
-
-
-
