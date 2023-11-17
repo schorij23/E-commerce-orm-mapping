@@ -41,9 +41,12 @@ For more details, see [License Details](https://choosealicense.com/licenses/mit/
 
 ## Walkthrough
 
-VS CODE Schema, Seeds and Start Server
-https://github.com/schorij23/E-commerce-orm-mapping/assets/5600528/c88f569e-e668-4dc7-a59a-524c058381eb
+
+https://github.com/schorij23/E-commerce-orm-mapping/assets/5600528/ad5db14f-ebae-44a7-b041-ebbf6c75eb54
 
 
-Insomina Endpoint Testing
-https://github.com/schorij23/E-commerce-orm-mapping/assets/5600528/0830568a-d936-469b-bec8-cc70e2f490b0
+
+
+https://github.com/schorij23/E-commerce-orm-mapping/assets/5600528/4505bdd6-80ba-4390-a41b-1dc947e1c90e
+
+
