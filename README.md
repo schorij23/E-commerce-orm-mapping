@@ -3,38 +3,16 @@
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## Description
-
+This is a backend e-commerce application, ecommerce is used for Internet retail online buying and selling. This application uses<br>
+Object-Relational Mapping (ORM) to connect the object-oriented model to the relational database.
 
 ## Table of Contents
 
-* [User Story](#user-story)
-* [Acceptance Criteria](#acceptance-criteria)
 * [Installations](#installations)
 * [Usage](#usage)
 * [License](#license)
-* [Testing](#testing)
 * [Questions](#questions)
 * [Walkthrough](#walkthrough)
-* [Screenshots](#screenshots)
-
-
-## User Story
-AS A manager at an internet retail company<br>
-I WANT a back end for my e-commerce website that uses the latest technologies<br>
-SO THAT my company can compete with other e-commerce companies<br>
-
-## Acceptance Criteria
-GIVEN a functional Express.js API<br>
-WHEN I add my database name, MySQL username, and MySQL password to an environment variable file<br>
-THEN I am able to connect to a database using Sequelize<br>
-WHEN I enter schema and seed commands<br>
-THEN a development database is created and is seeded with test data<br>
-WHEN I enter the command to invoke the application<br>
-THEN my server is started and the Sequelize models are synced to the MySQL database<br>
-WHEN I open API GET routes in Insomnia Core for categories, products, or tags<br>
-THEN the data for each of these routes is displayed in a formatted JSON<br>
-WHEN I test API POST, PUT, and DELETE routes in Insomnia Core<br>
-THEN I am able to successfully create, update, and delete data in my database<br>
 
 ## Installations
 This application is run on a command line<br>
@@ -47,15 +25,12 @@ Install dotenv on the command line [dotenv package ](https://www.npmjs.com/packa
 
 
 ## Usage
-
+This application is used to create the backend of e-commerce or Internet Retail
 
 ## License
 The project is licensed by the MIT License.
 
 For more details, see [License Details](https://choosealicense.com/licenses/mit/)
-
-## Testing
-
 
 ## Questions
 
@@ -65,10 +40,6 @@ For more details, see [License Details](https://choosealicense.com/licenses/mit/
   - Email address schorij23@gmail.com
 
 ## Walkthrough
-
-
-
-
 https://github.com/schorij23/E-commerce-orm-mapping/assets/5600528/5d08ee85-902f-4d51-8ea8-9fa1663048a1
 
 
@@ -76,6 +47,3 @@ https://github.com/schorij23/E-commerce-orm-mapping/assets/5600528/5d08ee85-902f
 
 https://github.com/schorij23/E-commerce-orm-mapping/assets/5600528/0830568a-d936-469b-bec8-cc70e2f490b0
 
-
-
-## Screenshots
