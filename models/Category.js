@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
-
+// Define the Category model by extending Sequelize's Model class
 class Category extends Model {}
 
 Category.init(
@@ -21,7 +21,7 @@ Category.init(
   {
     sequelize,
     timestamps: false,
-    freezeTableName: true,
+    freezeTableName: true, // Use the model's name as the table name
     underscored: true,
     modelName: 'category',
   }

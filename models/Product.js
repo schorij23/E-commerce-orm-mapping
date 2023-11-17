@@ -46,7 +46,7 @@ Product.init(
   {
     sequelize,
     timestamps: false,
-    freezeTableName: true,
+    freezeTableName: true, // Use the model's name as the table name
     underscored: true,
     modelName: 'product',
   }
