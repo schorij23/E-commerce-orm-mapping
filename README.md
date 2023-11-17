@@ -67,7 +67,11 @@ For more details, see [License Details](https://choosealicense.com/licenses/mit/
 ## Walkthrough
 
 
-https://github.com/schorij23/E-commerce-orm-mapping/assets/5600528/73e0de75-5911-4f0d-921a-9c29cba515b2
+
+
+https://github.com/schorij23/E-commerce-orm-mapping/assets/5600528/5d08ee85-902f-4d51-8ea8-9fa1663048a1
+
+
 
 
 https://github.com/schorij23/E-commerce-orm-mapping/assets/5600528/0830568a-d936-469b-bec8-cc70e2f490b0
