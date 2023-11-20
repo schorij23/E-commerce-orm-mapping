@@ -3,7 +3,7 @@
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## Description
-This is a backend e-commerce application, ecommerce is used for Internet retail online buying and selling. This application uses<br>
+This is a backend e-commerce application, ecommerce is used for Internet retail online buying and selling. This application uses
 Object-Relational Mapping (ORM) to connect the object-oriented model to the relational database.
 
 ## Table of Contents
