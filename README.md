@@ -18,10 +18,12 @@ Object-Relational Mapping (ORM) to connect the object-oriented model to the rela
 This application is run on a command line<br>
 The links to the requirements are highlighted<br>
 Install [node.js](https://nodejs.org/en) to run this application<br>
-Install Express.js on the command line [express](https://www.npmjs.com/package/express)<br>
-Install MYSQL on the command line [MYSQL](https://www.npmjs.com/package/sequelize)<br>
-Install Sequelize on the command line [Sequelize](https://www.npmjs.com/package/mysql2)<br>
-Install dotenv on the command line [dotenv package ](https://www.npmjs.com/package/dotenv)<br>
+Install Express.js on the command line [express](https://www.npmjs.com/package/express) to define the routes<br>
+Install MYSQL on the command line [MYSQL](https://www.npmjs.com/package/sequelize)MySQL is a relational database management system<br>
+Install Sequelize on the command line [Sequelize](https://www.npmjs.com/package/mysql2) this allows you to use a database 
+with javascipt in this case node.js on the backend<br>
+Install dotenv on the command line [dotenv package ](https://www.npmjs.com/package/dotenv) to 
+secure passwords and private information<br>
 
 
 ## Usage
